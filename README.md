@@ -82,5 +82,3 @@ Head to our docs to understand XMTP's concepts
 If you get into issues with `Buffer` and `polyfills` check out the fix below:
 
 - [Check out Buffer issue](https://github.com/xmtp/xmtp-js/issues/487)
-
-That's it! You've now created an XMTP app with Dynamic.
