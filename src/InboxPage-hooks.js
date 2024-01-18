@@ -9,13 +9,16 @@ const InboxPage = () => {
   const { primaryWallet, handleLogOut } = useDynamicContext();
   // Define a function to get and set the signer
   const getAndSetSigner = async () => {
+    // Get the internal wallet client from the primary wallet's connector
     const internalWalletClient =
       await primaryWallet.connector.getWalletClient();
+    // Create a new wallet client with the chain, transport, and account from the internal wallet client
     const walletClient = createWalletClient({
       chain: internalWalletClient.chain,
       transport: custom(internalWalletClient.transport),
       account: primaryWallet.address,
     });
+    // Set the signer to the new wallet client
     setSigner(walletClient);
   };
   // Use an effect to get and set the signer when the primaryWallet changes
